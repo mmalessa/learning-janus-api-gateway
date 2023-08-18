@@ -1,9 +1,9 @@
 {
-    "name": "exampleauth",
+    "name": "example-auth",
     "active": true,
     "proxy": {
         "preserve_host": false,
-        "listen_path": "/exampleauth/*",
+        "listen_path": "/example-auth/*",
         "upstreams": {
             "balancing": "roundrobin",
             "targets": [

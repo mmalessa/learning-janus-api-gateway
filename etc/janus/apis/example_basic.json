@@ -1,21 +1,21 @@
 {
-    "name": "example",
+    "name": "example-basic",
     "active": true,
     "proxy": {
         "preserve_host": false,
-        "listen_path": "/example/*",
+        "listen_path": "/example-basic/*",
         "upstreams": {
             "balancing": "roundrobin",
             "targets": [
                 {
-                    "target": "http://service1:8080/"
+                    "target": "http://service1:8080"
                 },
                 {
-                    "target": "http://service2:8080/"
+                    "target": "http://service2:8080"
                 }
             ]
         },
-        "strip_path": false,
+        "strip_path": true,
         "append_path": false,
         "methods": [
             "GET"

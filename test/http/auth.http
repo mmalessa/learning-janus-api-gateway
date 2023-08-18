@@ -11,8 +11,17 @@ Content-Type: application/json
 POST http://localhost:8080/auth/token
 Content-Type: application/json
 
+{}
 > {%
     client.global.set('auth_token', response.body.access_token)
+%}
+
+### fake logout
+POST http://localhost:8080/
+Content-Type: application/json
+
+> {%
+    client.global.clear('auth_token')
 %}
 
 ### get list of oauth servers
@@ -20,11 +29,11 @@ GET http://localhost:8081/oauth/servers
 Content-Type: application/json
 Authorization: Bearer {{auth_token}}
 
-### get example (no need Authorization)
-GET http://localhost:8080/example
+### get example-basic (no need Authorization)
+GET http://localhost:8080/example-basic
 Content-Type: application/json
 
-### get exampleauth (need Authorization)
-GET http://localhost:8080/example
+### get example-auth (need Authorization)
+GET http://localhost:8080/example-auth
 Content-Type: application/json
 Authorization: Bearer {{auth_token}}
