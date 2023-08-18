@@ -1,4 +1,4 @@
-version: '3.3'
+version: '3.8'
 services:
 
   gateway:
@@ -14,11 +14,21 @@ services:
     depends_on:
       - service1
       - service2
+      - auth-service
     volumes:
       - ../etc/janus:/etc/janus
-    command: /app/janus start
+#    command: /app/janus start
+
+  auth-service:
+    container_name: ${COMPOSE_PROJECT_NAME}_auth_service
+    image: rodolpheche/wiremock
+    ports:
+      - '8084:8080'
+    volumes:
+      - ../stubs/auth:/home/wiremock/mappings
 
   service1:
+    container_name: ${COMPOSE_PROJECT_NAME}_service1
     image: rodolpheche/wiremock
     ports:
       - '8089:8080'
@@ -26,6 +36,7 @@ services:
       - ../stubs/service1:/home/wiremock/mappings
 
   service2:
+    container_name: ${COMPOSE_PROJECT_NAME}_service2
     image: rodolpheche/wiremock
     ports:
       - '8088:8080'

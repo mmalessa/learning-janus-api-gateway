@@ -8,14 +8,13 @@ make build
 make up
 ```
 
-In browser:
-```txt
-Service 1 direct:
+## In browser:
+### Services directly
 http://localhost:8089/
-
-Service 2 direct:
 http://localhost:8088/
 
-Services behind gateway
+### Services behind gateway
 http://localhost:8080/example/
-```
+
+### OAUTH questions
+...see `test/http/auth.http`

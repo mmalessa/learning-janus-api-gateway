@@ -23,6 +23,10 @@ up: ## Start all services
 down: ## Stop all services
 	@$(DC) down
 
+.PHONY: start
+start: ## Start gateway
+	@$(DC) exec -it $(APP_CONTAINER) /app/janus start
+
 .PHONY: console
 console: ## Enter app container console
 	@$(DC) exec -it $(APP_CONTAINER) sh
