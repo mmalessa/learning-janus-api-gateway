@@ -1,0 +1,33 @@
+version: '3.3'
+services:
+
+  gateway:
+    container_name: ${COMPOSE_PROJECT_NAME}_gateway
+    build:
+      context: gateway
+      target: ${BUILD_TARGET}
+    restart: on-failure
+    ports:
+      - "8080:8080"
+      - "8081:8081"
+    tty: true
+    depends_on:
+      - service1
+      - service2
+    volumes:
+      - ../etc/janus:/etc/janus
+    command: /app/janus start
+
+  service1:
+    image: rodolpheche/wiremock
+    ports:
+      - '8089:8080'
+    volumes:
+      - ../stubs/service1:/home/wiremock/mappings
+
+  service2:
+    image: rodolpheche/wiremock
+    ports:
+      - '8088:8080'
+    volumes:
+      - ../stubs/service2:/home/wiremock/mappings
