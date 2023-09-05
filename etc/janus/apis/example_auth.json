@@ -8,10 +8,10 @@
             "balancing": "roundrobin",
             "targets": [
                 {
-                    "target": "http://service1:8080/"
+                    "target": "http://service1:80/"
                 },
                 {
-                    "target": "http://service2:8080/"
+                    "target": "http://service2:80/"
                 }
             ]
         },

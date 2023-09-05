@@ -8,7 +8,7 @@ Content-Type: application/json
 %}
 
 ### get token from gateway (and save)
-POST http://localhost:8080/auth/token
+POST http://localhost:80/auth/token
 Content-Type: application/json
 
 {}
@@ -17,7 +17,7 @@ Content-Type: application/json
 %}
 
 ### fake logout
-POST http://localhost:8080/
+POST http://localhost:80/
 Content-Type: application/json
 
 > {%
@@ -25,15 +25,15 @@ Content-Type: application/json
 %}
 
 ### get list of oauth servers
-GET http://localhost:8081/oauth/servers
+GET http://localhost:81/oauth/servers
 Content-Type: application/json
 Authorization: Bearer {{auth_token}}
 
 ### get example-basic (no need Authorization)
-GET http://localhost:8080/example-basic
+GET http://localhost:80/example-basic
 Content-Type: application/json
 
 ### get example-auth (need Authorization)
-GET http://localhost:8080/example-auth
+GET http://localhost:80/example-auth
 Content-Type: application/json
 Authorization: Bearer {{auth_token}}

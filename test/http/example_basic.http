@@ -1,11 +1,7 @@
 ### get example-basic -> service[x]/ (Hello World!)
-GET http://localhost:8080/example-basic
-Content-Type: application/json
-
-### get example-basic/status -> service[x]/status (All up an running)
-GET http://localhost:8080/example-basic/status
+GET http://localhost:80/example-basic
 Content-Type: application/json
 
 ### get example-basic/zosia/marysia -> service[x]/zosia/marysia (fake)
-GET http://localhost:8080/example-basic/zosia/marysia
+GET http://localhost:80/example-basic/zosia/marysia
 Content-Type: application/json
