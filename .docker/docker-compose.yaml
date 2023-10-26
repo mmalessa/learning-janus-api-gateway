@@ -33,7 +33,7 @@ services:
 
   service1:
     container_name: ${COMPOSE_PROJECT_NAME}_service1
-    image: mmalessa/go-dummy-http:1.0.0
+    image: mmalessa/go-dummy-http:1.0.1
     environment:
         - APP_INSTANCE=http1
     ports:
@@ -43,7 +43,7 @@ services:
 
   service2:
     container_name: ${COMPOSE_PROJECT_NAME}_service2
-    image: mmalessa/go-dummy-http:1.0.0
+    image: mmalessa/go-dummy-http:1.0.1
     environment:
         - APP_INSTANCE=http2
     ports:

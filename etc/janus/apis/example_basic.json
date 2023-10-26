@@ -16,7 +16,7 @@
             ]
         },
         "strip_path": true,
-        "append_path": false,
+        "append_path": true,
         "methods": [
             "GET"
         ]
